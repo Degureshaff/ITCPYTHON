@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+    {% include 'body_header.html' %}
+
+
+<form method="GET" action="/todo-add">
+    <input
+        class='form-control'
+        type="text"
+        name="todo_name"
+        placeholder="название задачи"
+    >
+    <button class="btn btn-success">добавить</button>
+</form>
+
+<ul>
+    {% for todo_one in todos %}
+        <li class="list-group-item">
+            <form method="GET" action="/todo-delete">
+                <input
+                    type="hidden"
+                    name="todo_id"
+                    value="{{ todo_one.id }}"
+                >
+                {{ todo_one.todo_name }}
+                <button class="btn btn-danger">Del</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<h1>Статистика по COVID-19</h1>
+<form method="POST" action="/get-covid-status/">
+    <!-- <input 
+        type="text" 
+        name='country_code' 
+        placeholder="Введите страну"
+    > -->
+    <select name="country_code">
+        {% for country in country_all %}
+            <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">получить данные:</button>
+</form>
+
+<h2>{{ country_code }}</h2>
+<h2>Заболевшие: {{ confirmed }}</h2>
+<h2>Выздоровлено: {{ recovered }}</h2>
+<h2>Умерли: {{ deaths }}</h2>

@@ -1,0 +1,25 @@
+<header class="navbar navbar-light bg-mygradient text-white">
+    <nav class="nav nav-pills">
+        <span class="nav-item">
+            <a href="/" class="nav-link">
+                <img class="img-profile" src="/static/py.png" width="48">
+            </a>
+        </span>
+        <span class="nav-item">
+            <a href="/" class="nav-link">Главная</a>
+        </span>
+
+        {% for category in post_category %}
+            <span class="nav-item">
+                <a href="/posts/category/{{ category.id }}" class="nav-link">{{ category.name }}</a>
+            </span>
+        {% endfor %}
+
+        <span class="nav-item">
+            <a href="/posts" class="nav-link">Статьи</a>
+        </span>
+    </nav>
+    <nav class="nav nav-pills justify-content-end">
+
+    </nav>
+</header>

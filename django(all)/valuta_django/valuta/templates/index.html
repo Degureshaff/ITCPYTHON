@@ -1,0 +1,39 @@
+<h1>валюта конвертер</h1> 
+<form action="get-weather">
+<input type="submit" value="погода" />
+</form> 
+<form action="get_weather-online">
+    <input type="submit" value="online погода" />
+    </form><br>
+
+
+<div>
+    <span style='color:red'>Доллар: {{USD}} </span><br>
+    <span style='color:green'>Евро: {{EUR}} </span><br>
+    <span style='color: red'>Рубль: {{RUB}} </span><br>
+    <span  style='color:green'>Тенге: {{KZT}}</span><br>
+
+</div>
+
+
+
+<form method='POST'  action='/convert-usd/'>
+    <input type="number" placeholder="сумма" name="input_value">
+    <input type="reset" value="сброс">
+    <button>конвертация</button>
+    {% csrf_token  %}
+</form><br>
+
+
+<p>USD convert</p>
+<form method='POST'  action=''>
+    <input type="text" placeholder="USD convert" value="{{ converted_usd_result }}" readonly></form>
+<p>EUR convert</p>
+<form method='POST'  action=''>
+    <input type="text" placeholder="EUR convert" value="{{ converted_eur_result }}" readonly></form>
+<p>RUB convert</p>
+<form method='POST'  action=''>
+    <input type="text" placeholder="RUB convert" value="{{ converted_rub_result }}" readonly> </form>
+<p>KZT convert</p>
+<form method='POST'  action=''>
+    <input type="text" placeholder="KZT convert" value="{{ converted_kzt_result }}" readonly> </form>
